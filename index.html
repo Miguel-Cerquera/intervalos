@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Document</title>
+    <style>
+        body
+        {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+        }
+        .tit
+        {
+        position: absolute;
+        left: 14%;
+        top: 1%;
+        width: 75%;
+        height: 20%;
+        background: #202F5B;
+        border: black 5px solid
+        }
+        .t
+        {
+            position: absolute;
+            font-family: Arial, Helvetica, sans-serif;
+            font-weight: 700;
+            font-size: 20px;
+            color:white;
+            top: 36%;
+            left: 35%;
+            
+        }
+        .c
+        {
+        position: absolute;
+        left: 22%;
+        top: 26%;
+        width: 75%;
+        height: 70%;
+        background: #1151D3;
+        border: black 5px solid
+        }
+        .cuadros
+        {
+        position: absolute;
+        left: 2%;
+        top: 35%;
+        width: 16%;
+        height: 14%;
+        background: #0EB3B8;
+        border: black 5px solid
+        }
+        #cuadrog
+        {
+            display: none;
+        }
+        .neo
+        {
+            position:absolute;
+            left:35%;
+            top: 30%;
+            width: 427px;
+            height: 402px;
+            background: url(logo.png);
+            background-repeat: no-repeat;
+        }
+        #escu
+        {
+            display: none;
+        }
+        .cer
+        {
+    position: absolute;
+    left: 95%;
+    top: 90%;
+    width: 5%;
+    height: 10%;
+    background: #F75454;
+}
+    .circulo
+    {
+        position: absolute;
+    left: 45%;
+    top: 30%;
+    width: 15%;
+    height: 35%;
+    border-radius: 100%;
+    border: black 5px solid;
+    background: #F75454;
+    } 
+    #cuadrop
+    {
+        display:none;
+    }
+    </style>
+</head>
+<body onmousemove="xy()">
+    <div class="tit" onclick="escudo()"><div class="t" >Centro Educativo Neosistemas</div></div>
+    <div class="neo" id="escu"></div>
+    <div class="cuadros" id="corde" onclick="coords()"><div class="t">Opcion 1</div></div>
+    <div class="cuadros" id="rand" style="top: 65%;" onclick="llam()"><div class="t">Opcion 2</div></div>
+    <div class="c" id="cuadrog">
+        <div class="t" id="cd"></div>
+        <div class="t" id="df" style="top:50%;">a</div>
+    <div class="cer" id="cierra" onclick="cerrar()"><div class="t">X</div></div>
+    </div>
+    <div class="c" id="cuadrop">
+        <div class="circulo" id="cir"></div>
+        <div class="cer" id="cierr" onclick="cerrar()"><div class="t">X</div></div>
+    </div>
+</body>
+<script>
+function escudo()
+{setTimeout(moes,0);}
+function moes()
+{   escu.style.display="block";
+    setTimeout(desapes,1500);
+}
+function desapes()
+{escu.style.display="none";}
+function coords()
+{
+cuadrog.style.display="block";
+}
+ function xy(){
+        if(cuadrog.style.display=="block")
+        {
+            y=event.clientY;
+            x1=event.clientX;
+            cd.innerHTML="Eje x: "+x1+" eje y: "+y;
+                if(x1>291&&x1<1326)
+                {
+                    
+                    if(y>155&&y<620)
+                    {
+                        df.innerHTML="Estoy dentro.";
+                    }
+                    else
+                    {
+                        df.innerHTML="Estoy fuera.";
+                    }
+                }
+                else
+                {
+                    df.innerHTML="Estoy fuera.";
+                }
+               
+            }
+    }
+function cerrar()
+{
+cuadrog.style.display="none";
+cuadrop.style.display="none";
+}
+x=0;
+function circ()
+{
+    x=x+1;
+    setTimeout(pos1,0);
+    setTimeout(pos2,250);
+    setTimeout(pos3,500);
+    setTimeout(pos4,750);
+    setTimeout(pos5,1000);
+    setTimeout(pos6,1250);
+    setTimeout(pos7,1500);
+    if(x==8)
+    {
+        clearInterval(movim);
+    }
+}
+function pos1()
+{
+cir.style.top=1+"%";
+cir.style.height=96+"%";
+}
+function pos2()
+{
+cir.style.top=30+"%";
+cir.style.height=35+"%";
+cir.style.left=1+"%";
+cir.style.width=97+"%";
+}
+function pos3()
+{
+cir.style.top=1+"%";
+cir.style.left=1+"%"
+cir.style.width=97+"%";
+}
+function pos4()
+{
+cir.style.height=92+"%";
+cir.style.left=83+"%";
+cir.style.width=15+"%";
+}
+function pos5()
+{
+cir.style.top=62+"%";
+cir.style.height=35+"%";
+cir.style.left=1+"%";
+cir.style.width=97+"%";
+}
+function pos6()
+{
+cir.style.top=1+"%";
+cir.style.height=96+"%";
+cir.style.left=1+"%";
+cir.style.width=15+"%";
+}
+function pos7()
+{
+cir.style.left=45+"%";
+cir.style.top=30+"%";
+cir.style.width=15+"%";
+cir.style.height=35+"%";
+}
+function llam()
+{
+    cuadrop.style.display="block";
+    movim=setInterval(circ,1750);
+}
+
+</script>
+</html>
